@@ -6,6 +6,7 @@ import Word from './components/Word';
 import Popup from './components/Popup';
 import Notification from './components/Notification';
 import { showNotification as show, checkWin } from './helpers/helpers';
+import InitialPopup from './components/InitialPopup';
 
 import './App.css';
 
@@ -17,6 +18,11 @@ function App() {
   const [correctLetters, setCorrectLetters] = useState([]);
   const [wrongLetters, setWrongLetters] = useState([]);
   const [showNotification, setShowNotification] = useState(false);
+
+  //TEST
+  const [showModal, setShowModal] = useState(true);
+ 
+  
 
   useEffect(() => {
     const handleKeydown = event => {
@@ -56,18 +62,25 @@ function App() {
 
   return (
     <>
-      <div class="h-screen bg-[#E1EEC7]">
-        <Header setPlayable={setPlayable} playAgain={playAgain}/>
+      <div class="h-screen bg-[#E1EEC7]">      
+        <Header setPlayable={setPlayable} playAgain={playAgain} setShowModal={setShowModal}/>
+        <InitialPopup showModal={showModal}  setShowModal={setShowModal} />
         <div class="flex flex-col h-screen justify-center items-center bg-[#E1EEC7]">
+          <div>
+            
+          </div>
           <div>
             <Figure wrongLetters={wrongLetters} />
           </div>
-          <div>
-            <WrongLetters wrongLetters={wrongLetters} />
-          </div>
+          
           <div>
             <Word selectedWord={selectedWord} correctLetters={correctLetters} />
           </div> 
+          <div>
+            <div>
+              <WrongLetters wrongLetters={wrongLetters} />
+            </div>
+          </div>
         </div>
         <Popup correctLetters={correctLetters} wrongLetters={wrongLetters} selectedWord={selectedWord} setPlayable={setPlayable} playAgain={playAgain} />
         <Notification showNotification={showNotification} />
