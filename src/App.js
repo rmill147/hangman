@@ -62,10 +62,13 @@ function App() {
 
   return (
     <>
-      <div class="h-screen bg-[#E1EEC7]">      
-        <Header setPlayable={setPlayable} playAgain={playAgain} setShowModal={setShowModal}/>
+      <div class="h-screen bg-[#4D9078] overflow-hidden">      
+        
         <InitialPopup showModal={showModal}  setShowModal={setShowModal} />
-        <div class="flex flex-col h-screen justify-center items-center bg-[#E1EEC7]">
+        <Header setPlayable={setPlayable} playAgain={playAgain} setShowModal={setShowModal}/>
+        
+        <div class="flex flex-col h-full justify-center items-center">
+          
           <div>
             
           </div>

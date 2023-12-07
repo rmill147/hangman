@@ -23,17 +23,18 @@ const Popup = ({correctLetters, wrongLetters, selectedWord, setPlayable, playAga
     <div>
       <div className="popup-container" style={finalMessage !== '' ? {display:'flex'} : {}}>
         <div class="h-screen w-screen bg-[#FCFCFC]/75 flex items-center justify-center">
-        <div className="popup" class="flex-col bg-[#61B136] text-center p-6 rounded text-[#FCFCFC] h-1/3 w-1/3 text-2xl drop-shadow-md" >
+        <div className="popup" class="flex-col bg-[#D8D2D6] text-center p-6 rounded text-[#161616] h-1/3 w-1/3 text-2xl drop-shadow-md overflow-hidden" >
         <div class="mt-12">
-          <div class="p-4 border-b">
-            <h2 class="text-[#FCFCFC] m-auto ">{finalMessage}</h2>
-            <h3 class="text-[#FCFCFC] m-auto ">{finalMessageRevealWord}</h3>
-          </div>
           <div class="p-4">
-            <a onClick={playAgain} class="px-5 py-1 relative border rounded group overflow-hidden font-small bg-none text-[#FCFCFC] inline-block">
-              <span class="absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-[#FCFCFC] group-hover:h-full opacity-90"></span>
-              <span class="relative group-hover:text-[#161616] border-[#161616] cursor-pointer">Play Again</span>
+            <h2 class="text-[#161616] m-auto ">{finalMessage}</h2>
+            <h3 class="text-[#161616] m-auto ">{finalMessageRevealWord}</h3>
+          </div>
+          <div class="flex p-4 overflow-hidden justify-center">
+            <a onClick={playAgain} class="rounded-md px-3.5 py-0 m-1 relative group cursor-pointer border font-medium border-[#161616] text-[#161616] text-white overflow-hidden">
+              <span class="absolute w-64 h-0 transition-all duration-300 origin-center rotate-45 -translate-x-20 bg-[#161616] top-1/2 group-hover:h-64 group-hover:-translate-y-32 ease"></span>
+              <span class="relative text-[#161616] transition duration-300 group-hover:text-white ease">Play Again</span>
             </a>
+
           </div>
         </div>
         
