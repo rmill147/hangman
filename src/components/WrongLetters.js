@@ -10,8 +10,7 @@ const WrongLetters = ({ wrongLetters }) => {
           <p class="text-[#161616]"></p>
         }
         {wrongLetters
-          .map((letter, i) => <span key={i}>{letter}</span>)
-          .reduce((prev, curr) => prev === null ? [curr] : [prev, ', ', curr], null)}
+          }
       </div>
     </div>
   )
