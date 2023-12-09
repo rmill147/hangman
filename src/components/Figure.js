@@ -1,8 +1,8 @@
 import React from 'react'
 import WrongLetters from './WrongLetters'
 
-const Figure = ({wrongLetters}) => {
-  const errors = wrongLetters.length;
+const Figure = ({wrongLetters, numMisses}) => {
+  const errors = numMisses;
 
   return (
     <div class="flex justify-center py-4">
